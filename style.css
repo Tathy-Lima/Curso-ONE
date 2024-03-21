@@ -1,0 +1,233 @@
+:root {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+
+	
+	font-family: Onest;
+
+	--light-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+	font-family: JetBrainsMono;
+	src: url(./assets/fonts/JetBrainsMono.ttf);
+}
+
+@font-face {
+	font-family: Onest;
+	src: url(./assets/fonts/OnestSanSerif.ttf);
+}
+
+@font-face {
+	font-family: YoungSerif;
+	src: url(./assets/fonts/YoungSerif.ttf);
+}
+
+body {
+	background-color: #aecbdb;
+	display: flex;
+}
+main {
+	margin: 2rem auto;
+	height: 50rem;
+	width: 80%;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+.name-dev{
+	padding: 1rem;
+}
+.main-text-input-container {
+	width: 50%;
+	margin-right: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+.text-input {
+	height: 43rem;
+	display: flex;
+	justify-content: center;
+}
+.text-input > textarea {
+	width: 100%;
+	height: 40rem;
+	font-family: Onest;
+	font-size: 1.5rem;
+	resize: none;
+	background-color:#dadbe8;
+}
+.menu-container {
+	width: 100%;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+}
+.menu-text-container {
+	padding: 0.3rem;
+	display: flex;
+}
+.menu-text-container > img {
+	height: 1rem;
+}
+.menu-warning {
+	font-size: 0.8rem;
+	margin-left: 0.5rem;
+}
+.menu-buttons-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.menu-buttons-container > button {
+	width: 45%;
+	height: 3rem;
+}
+.main-text-decoded-container {
+	background-color: #dadbe8;
+	border-radius: 2rem;
+	box-shadow: var(--light-shadow);
+	width: 28%;
+	height: 52rem;
+	margin-top: -1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.main-text-decoded-container > button {
+	align-self: center;
+}
+.text-decoded-null-container {
+	display: flex;
+	flex-direction: column;
+}
+.text-decoded-null-img {
+	margin: 10rem 0 3rem 0;
+	display: flex;
+	justify-content: center;
+}
+.text-decoded-null-img > img {
+	width: 90%;
+	max-width: 20rem;
+	border: 3px solid #0d0d10;
+	border-radius: 50%;
+	box-shadow: var(--light-shadow);
+}
+.text-decoded-null-text-container {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	height: 7rem;
+	justify-content: space-between;
+}
+.text-decoded-null-text-title {
+	align-self: center;
+	text-align: center;
+	font-size: 1.5rem;
+}
+.text-decoded-null-text-subtext {
+	align-self: center;
+	text-align: center;
+	font-size: 1rem;
+}
+.text-decoded-container {
+	margin: 1rem 1rem;
+	height: 42rem;
+	overflow: auto;
+	padding: 1rem;
+	display: none;
+}
+.copyButton {
+	display: none;
+}
+
+.ccBtn {
+	padding: 0.5rem;
+	background-color: #cbd3e7;
+	border: 2px solid #dae1f6;
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 0.5rem;
+	text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+	font-family: JetBrainsMono;
+	max-width: 10rem;
+}
+.ccBtn:hover:not(:disabled) {
+	background-color: #cadef3;
+}
+.ccBtn:active:not(:disabled) {
+	background-color: #929cd9;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+	position: relative;
+	transform: scale(0.9, 0.9);
+	transition: transform 0.1s;
+}
+.ccBtn:disabled,
+.ccBtn[disabled] {
+	cursor: default;
+	border: 2px solid #000000;
+	background-color: #000000;
+	color: var(--fg2);
+}
+
+textarea {
+	border: none;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+textarea:focus {
+	outline: none;
+}
+
+/* tablet screen */
+@media screen and (max-width: 768px) {
+	main {
+		height: 50rem;
+		flex-direction: column;
+	}
+	.main-text-input-container {
+		width: 100%;
+		margin: 0;
+	}
+	.text-input {
+		height: 35rem;
+	}
+	.text-input > textarea {
+		height: 32rem;
+	}
+	.text-decoded-null-img {
+		display: none;
+	}
+	.main-text-decoded-container {
+		width: 100%;
+		height: 7rem;
+		margin-top: 3rem;
+	}
+	.text-decoded-null-text-container {
+		margin-top: 1rem;
+		height: 4rem;
+	}
+	.text-decoded-null-text-title {
+		font-size: 1rem;
+	}
+	.text-decoded-null-text-subtext {
+		font-size: 0.7rem;
+	}
+}
+/* cellphone screen */
+@media screen and (max-width: 375px) {
+	main {
+		flex-direction: column;
+	}
+	.ccBtn {
+		padding: 0.1rem;
+		font-size: 0.7rem;
+	}
+}
